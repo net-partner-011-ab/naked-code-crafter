@@ -1,20 +1,55 @@
 import Image from "next/image";
 
-export default function Cards({ items }) {
-    return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-          {items.map((item, index) => (
+const items = {
+  firstItem: {
+    image: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    title: "First Title",
+    subtitle: "subtitle",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
+  },
+  secondItem: {
+    image: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    title: "Second Title",
+    subtitle: "subtitle",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
+  },
+  thirdItem: {
+    image: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    title: "Third Title",
+    subtitle: "subtitle",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.",
+  }
+};
+
+const itemsArray = Object.keys(items).map(key => items[key]);
+
+export default function Cards() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="columns">
+          {itemsArray.map((item, index) => (
             <div className="column card m-4" key={index}>
               <div className="card-image">
                 <figure className="image is-4by3">
-                <Image
-                  src={item.image.url} 
-                  alt=""
-                  width={item.image.width}
-                  height={item.image.height}
-                />
+                  <Image
+                    src={item.image.url}
+                    alt=""
+                    width={item.image.width}
+                    height={item.image.height}
+                  />
                 </figure>
               </div>
               <div className="card-content">
@@ -29,9 +64,9 @@ export default function Cards({ items }) {
                 </div>
               </div>
             </div>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
+}
