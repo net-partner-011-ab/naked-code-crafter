@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Link from "next/link"; 
+import Link from "next/link";
 import Image from "next/image"
 
 import logo from "../assets/img/CC-logo-red.png"
@@ -17,12 +17,12 @@ export default function Navbar() {
       <div className="container">
         <div className="navbar-brand">
           <Link href="/" className="navbar-item">
-              <Image
-                src={logo} 
-                alt=""
-                width="100%"
-                height={28}
-              />
+            <Image
+              src={logo}
+              alt=""
+              width="100%"
+              height={28}
+            />
           </Link>
           <div
             className={`navbar-burger ${isActive ? "is-active" : ""}`}
@@ -52,12 +52,12 @@ export default function Navbar() {
               <div className="field is-grouped">
                 <p className="control">
                   <Link href="/contact" className="button is-black ml-3">
-                   <span>Contact</span>
+                    <span>Contact</span>
                   </Link>
                 </p>
                 <Link href="https://github.com/net-partner-011-ab/code-crafter" className="navbar-item" target="_blank">
                   <Image
-                    src={github} 
+                    src={github}
                     alt=""
                     width="100%"
                     height={28}

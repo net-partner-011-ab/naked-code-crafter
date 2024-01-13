@@ -2,7 +2,46 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Image from "next/image";
 
-export default function ImageCarousel({ title, subtitle, items }) {
+const content = {
+  title: "Image Carousel",
+  subtitle: "Subtitle",
+  items: {
+    item1: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    item2: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    item3: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    item4: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    item5: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+    item6: {
+      url: "/img/1280x960.png",
+      width: "1280",
+      height: "960",
+    },
+  }
+};
+
+const itemsArray = Object.keys(content.items).map(key => content.items[key]);
+
+export default function ImageCarousel() {
   const responsive = {
     desktop: {
       breakpoint: {
@@ -34,9 +73,9 @@ export default function ImageCarousel({ title, subtitle, items }) {
     <section className="section has-background-white">
       <div className="container">
         <div className="info has-text-centered mb-4">
-          <h2 className="title">{title}</h2>
+          <h2 className="title">{content.title}</h2>
           <h4 className="subtitle mt-4">
-            {subtitle}
+            {content.subtitle}
           </h4>
         </div>
         <div id="carousel">
@@ -49,10 +88,10 @@ export default function ImageCarousel({ title, subtitle, items }) {
             partialVisbile={true}
             arrows={true}
           >
-            {items.map((item, index) => (
+            {itemsArray.map((item, index) => (
               <div className="column" key={index}>
                 <Image
-                  src={item.url} 
+                  src={item.url}
                   alt=""
                   width={item.width}
                   height={item.height}
